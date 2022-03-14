@@ -1,16 +1,17 @@
 <?php
 /* Attempt MySQL server connection. Assuming you are running MySQL
 server with default setting (user 'root' with no password) */
-$link = mysqli_connect("localhost", "root", "", "sevensports");
- 
+// $link = mysqli_connect("localhost", "root", "", "sevensports");
+ include 'connection.php';
 // Check connection
-if($link === false){
+if($conn === false){
     die("ERROR: Could not connect. " . mysqli_connect_error());
 }
  
 // Attempt create table query execution
 $sql = "CREATE TABLE register(
-    id TIMESTAMP PRIMARY KEY,
+    -- id TIMESTAMP PRIMARY KEY,
+    id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
     email VARCHAR(70) NOT NULL,
@@ -22,12 +23,12 @@ $sql = "CREATE TABLE register(
     city CHAR(20) NOT NULL,
     pincode INT(6) NOT NULL
 )";
-if(mysqli_query($link, $sql)){
+if(mysqli_query($conn, $sql)){
     echo "Table created successfully.";
 } else{
-    echo "ERROR: Could not able to execute $sql. " . mysqli_error($link);
+    echo "ERROR: Could not able to execute $sql. " . mysqli_error($conn);
 }
  
 // Close connection
-mysqli_close($link);
+mysqli_close($conn);
 ?>

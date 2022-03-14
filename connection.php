@@ -1,20 +1,23 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$db = "sevensports";
-$port = "8016";
-//3306 by default
+// $servername = "localhost";
+// $username = "root";
+// $password = "";
+// $db = "sevensports";
+// $port = "8016";
 
-// $conn = mysqli_connect("sql109.epizy.com", "epiz_31265295", "******", "epiz_31265295_sevensports");
+$servername = "containers-us-west-11.railway.app";
+$username = "root";
+$password = "dWHYsWhWzxrfQ8ATfFbY";
+$db = "railway";
+$port = "8016";
 
 // Create connection
 
-$conn = mysqli_connect($servername, $username, $password,$db);
+$conn = mysqli_connect($servername, $username, $password,$db,$port);
 
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-// echo "Connected successfully";
+echo "Connected successfully";
 ?>

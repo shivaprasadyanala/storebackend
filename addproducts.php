@@ -30,7 +30,8 @@ include 'connection.php';
 $val = mysqli_query($conn,'select * from products');
 if($val==false){
    $ct = "create table products (
-    pid TIMESTAMP NOT NULL PRIMARY KEY,
+    
+     pid int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     pname VARCHAR(50) NOT NULL,
     cname VARCHAR(50) NOT NULL,
     stock INT(10) NOT NULL,
@@ -43,7 +44,7 @@ if($val==false){
    if(mysqli_query($conn,$ct)){
     echo "table created";
    }else{
-    echo "error in table creation";
+    echo "error in table creation".mysqli_error($conn);
    }
 }
 
