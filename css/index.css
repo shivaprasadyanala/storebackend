@@ -1,0 +1,265 @@
+ * {
+     /* margin: 0;
+     padding: 0; */
+     --font-style: Roboto Condensed;
+ }
+ 
+ .nav {
+     display: flex;
+     justify-content: space-around;
+     color: #fff;
+     background-color: #808080;
+     /* margin: 0 10px 0 10px; */
+ }
+ 
+ a {
+     color: #fff;
+     text-decoration: none;
+ }
+ 
+ .btn-outline-success {
+     /* color: #198754; */
+     color: #fff;
+     /* border-color: #198754; */
+     font-family: var(--font-style);
+ }
+ 
+ #top-nav {
+     position: fixed;
+     width: 100%;
+     /* left: 200px; */
+     z-index: 999;
+     opacity: 0.7;
+     margin-bottom: 100px;
+ }
+ 
+ li {
+     list-style: none;
+     font-size: 20px;
+     /* margin-top: 10px; */
+     font-family: var(--font-style);
+ }
+ 
+ ul.navbar-nav {
+     display: flex;
+     justify-content: space-between;
+     font-family: var(--font-style);
+     /* opacity: 0; */
+ }
+ 
+ .ms-3 {
+     margin-left: 3rem!important;
+ }
+ 
+ #topnav {
+     position: fixed;
+ }
+ /* .text{
+     height: 200vh;
+     background-color: red;
+ } */
+ 
+ #login {
+     color: #1e3c78;
+     /* border: 2px solid red; */
+     background-color: #e9edf7;
+     border-radius: 10px;
+     padding: 5 10 5 10;
+ }
+ 
+ #login:hover {
+     color: #fff;
+     background-color: #1e3c78;
+ }
+ 
+ #cart {
+     color: rgb(102, 84, 84);
+ }
+ 
+ #cart:hover {
+     color: black;
+ }
+ /* carouel */
+ 
+ .myimg {
+     z-index: 1;
+     /* position: absolute; */
+ }
+ 
+ #t1 {
+     /* background-image: url('https://www.setaswall.com/wp-content/uploads/2018/07/Cricket-Wallpaper-09-2560x1600-768x480.jpg'); */
+     background-image: url('../imgs/t1.jpg');
+     background-repeat: no-repeat;
+     background-size: 100%;
+     height: 750px;
+     color: rgba(0, 0, 0, 0.1);
+     margin-top: 7%;
+     /* background-attachment: fixed; */
+     /* background-position: center; */
+ }
+ 
+ #t2 {
+     /* background-image: url('https://i1.wp.com/4.bp.blogspot.com/-_511Lpe6Fkc/VPJ9wbOsY6I/AAAAAAAAC9A/7v6g831BEz0/s1600/cricket%2Blive%2Bstreaming.jpg'); */
+     background-image: url('../imgs/t2.jpg');
+     background-repeat: no-repeat;
+     background-size: 100%;
+     height: 750px;
+     color: rgba(0, 0, 0, 0.1);
+     margin-top: 7%;
+     /* background-attachment: fixed; */
+     /* background-position: center; */
+ }
+ 
+ #t3 {
+     /* background-image: url('https://www.setaswall.com/wp-content/uploads/2018/07/Cricket-Wallpaper-02-1920x1080.jpg'); */
+     background-image: url('../imgs/t3.jpg');
+     background-repeat: no-repeat;
+     background-size: 100%;
+     height: 750px;
+     color: rgba(0, 0, 0, 0.1);
+     margin-top: 7%;
+     /* background-attachment: fixed; */
+     /* background-position: center; */
+ }
+ 
+ .text {
+     color: #fff;
+     background-color: rgba(0, 0, 0, 0.4);
+     display: flex;
+     justify-content: center;
+     font-family: var(--font-style);
+     flex-direction: column;
+     align-items: center;
+     height: 750px;
+     text-transform: uppercase;
+     font-style: italic;
+ }
+ 
+ h1 {
+     font-size: 60px;
+     text-align: center;
+ }
+ 
+ #brand {
+     font-family: var(--font-style);
+     text-transform: uppercase;
+     text-align: center;
+     margin: 20px 0 20px 0
+ }
+ 
+ .add-cart-quantity {
+     color: #fff;
+     background-color: rgb(102, 84, 84);
+     border-radius: 20px;
+     width: 15px;
+     height: 15px;
+     line-height: 15px;
+     text-align: center;
+     display: inline-block;
+     font-size: 10px;
+     vertical-align: middle;
+     margin-top: -18px;
+     margin-left: -10px;
+ }
+ 
+ .footer {
+     min-height: 350px;
+     width: 100%;
+     background-color: #313041;
+     color: #fff;
+     background: linear-gradient(370deg, #1e0051, #3b009e);
+     /* padding: 50px 100px 0 400px; */
+     /* top right left bottom */
+ }
+ 
+ #mycol {
+     margin-top: 5%;
+ }
+ 
+ .product {
+     /* border: 1px solid red; */
+     font-family: var(--font-style);
+     text-transform: uppercase;
+     background-color: #ffffff;
+     box-shadow: 0 0 8px #cfcdcd;
+     transition: 0.5s;
+     text-align: center;
+     /* margin: 0; */
+ }
+ 
+ .product:hover {
+     cursor: pointer;
+     transform: scale(1.025);
+ }
+ 
+ .mybtn {
+     border-radius: 20px;
+     width: 80px;
+     text-transform: uppercase;
+     margin-left: 3rem;
+     background-color: #324848;
+     outline: none;
+     border: none;
+ }
+ 
+ .mybtn:hover {
+     /* background-color: #3ea3a3; */
+     opacity: 0.8;
+ }
+ 
+ h3 {
+     font-family: var(--font-style);
+     text-transform: uppercase;
+ }
+ /* .scheme_1 #swiper .swiper_btn {
+     position: absolute;
+     bottom: 30px;
+     width: 35px;
+     height: 70px;
+     color: #fff;
+     font-size: 50px;
+     -webkit-transform: translate3d(0, 0, 0);
+     -ms-transform: translate3d(0, 0, 0);
+     -o-transform: translate3d(0, 0, 0);
+     transform: translate3d(0, 0, 0);
+     -webkit-transition: opacity .3s ease-in-out;
+     -moz-transition: opacity .3s ease-in-out;
+     transition: opacity .3s ease-in-out;
+     opacity: .5;
+     cursor: pointer;
+     z-index: 10;
+ } */
+ 
+ #prev,
+ #next {
+     cursor: pointer;
+     position: absolute;
+     top: 50%;
+     width: auto;
+     margin-top: -22px;
+     padding: 16px;
+     color: white;
+     font-weight: bold;
+     font-size: 18px;
+     transition: 0.6s ease;
+     border-radius: 0 3px 3px 0;
+     user-select: none;
+     border-radius: 0 3px 3px 0;
+     user-select: none;
+ }
+ /* #map {
+     border-radius: 10px;
+     border: 2px solid #fff
+ } */
+ 
+ a:hover {
+     color: #ebbdbd;
+ }
+ 
+ .logos:hover {
+     /* opacity: 0.7; */
+     color: rgba(0, 0, 0, 0.3);
+     cursor: pointer;
+     filter: hue-rotate(180deg);
+     -webkit-filter: hue-rotate(180deg);
+ }

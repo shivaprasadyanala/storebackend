@@ -1,0 +1,37 @@
+ .products {
+     text-align: center;
+     display: flex;
+     justify-content: space-around;
+     flex-wrap: wrap;
+ }
+ 
+ .products .product {
+     flex: 0 0 20%;
+ }
+ 
+ .product {
+     border: 2px solid #fff;
+     box-shadow: 0px 1px 5px 0px #f8dede;
+     padding: 10px;
+     text-align: center;
+     margin-bottom: 5%;
+     transition: 0.3s;
+ }
+ 
+ .product:hover {
+     cursor: pointer;
+     transform: scale(1.025);
+ }
+ 
+ .top-section {
+     display: flex;
+     justify-content: space-around;
+     margin-bottom: 10px;
+ }
+ 
+ input#pid {
+     border: none;
+     background-color: #fff;
+     margin-bottom: 10px;
+     opacity: 0;
+ }
