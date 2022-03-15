@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet" />
     <!-- Google Fonts -->
@@ -24,7 +24,8 @@
 
 </head>
 
-<body>
+<>
+    <!-- navbar -->
      <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="top-nav">
             <div class="container-fluid">
@@ -81,7 +82,7 @@
             </div>
         </nav>
     </div>
-    <!--Section: Contact v.2-->
+    <!--Section: Contact -->
     <section class="mx-5">
 
         <!--Section heading-->
