@@ -1,8 +1,6 @@
 <?php
 // $username = $_POST['name'];
    session_start();
-//    if(isset($_SESSION['username'])) echo'ho';
-//    if($username='') echo "hi";
 
    if($_SESSION['name']==""){
     //    echo "hi";

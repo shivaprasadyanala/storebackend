@@ -1,3 +1,14 @@
+<?php
+// $username = $_POST['name'];
+   session_start();
+
+   if($_SESSION['name']==""){
+    //    echo "hi";
+    
+    header('location:index.php');
+    // exit();
+   }
+?>
 <!doctype html>
 <html lang="en">
 
@@ -61,7 +72,20 @@
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
 
-                    <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li>
+                    <?php 
+                    // session_start();
+                      if($_SESSION['name']==""){
+                         
+                         echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>"; 
+                      }
+                    
+                      else{
+                           echo "welcome user";
+                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='logout.php'>logout</a></li>";
+                      }  
+                     
+                    
+                      ?>
 
 
                 </div>
@@ -137,7 +161,7 @@
                 <div class="col-md-4">
                     <div class="about_img">
                         <img src="./imgs/image1.jpeg" class="img-float" width="100%" alt="image...">
-                        <img src="./imgs/image2.jpeg" class="img-float" width="100%" alt="image...">
+                        <img src="./imgs/cricket.jpeg" class="img-float" width="100%" alt="image...">
                     </div>
 
 

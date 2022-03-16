@@ -1,3 +1,13 @@
+<?php
+// $username = $_POST['name'];
+   session_start();
+
+   if($_SESSION['name']==""){
+    
+    header('location:index.php');
+    // exit();
+   }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -64,9 +74,20 @@
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
-
-                    <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li>
-
+                    <?php 
+                    // session_start();
+                      if($_SESSION['name']==""){
+                         
+                         echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>"; 
+                      }
+                    
+                      else{
+                           echo "welcome user:".$_SESSION['name'];
+                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='logout.php'>logout</a></li>";
+                      }  
+                     
+                    
+                      ?>
 
                 </div>
                 <li class="nav-item">
