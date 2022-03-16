@@ -76,7 +76,7 @@
 
                     <!-- <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li> -->
                     <li class="nav-item m-3"><p>welcome user</p></li>
-                   <li class="nav-item m-3"><a class="nav-link" id="login" href="logout.php">logout</a></li>
+                   <li class="nav-item m-3"><a class="nav-link" id="login" href="logout.php" onclick="return confirm('Are you surely want to logout?');">logout</a></li>
                 </div>
                 <li class="nav-item">
                     <a class="nav-link" href="cart.php">
