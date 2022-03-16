@@ -1,33 +1,22 @@
-<?php
-if (isset($_POST["login"])) {
-//     $con = mysqli_connect("localhost", "root", "", "sevensports");
-//  echo"w";
-include 'connection.php';
 
-    // Check connection
-    if($conn === false){
-        die("ERROR: Could not connect. " . mysqli_connect_error());
-    }
-$mail=$_POST['username'];
-$password=$_POST['password'];
-echo"wow";
-$sql="select * from register where email= '$mail' and pass='$password'";
-    
-if($sql!=null)
-{
-    $result=mysqli_query($conn, $sql);
-    $row=mysqli_fetch_array($result,MYSQLI_NUM);
+ <?php
+ 
+ session_start();
+ $message = "";
+ if(count($_POST)>0){
+     require('connection.php');
+     $sql="select * from register where email= '".$_POST['username']."' and pass='".$_POST['password']."'";
+     $result = mysqli_query($conn,$sql);
+     $row = mysqli_fetch_array($result);
+     if(is_array($row)){
+         $_SESSION['id'] = $row['id'];
+         $_SESSION['name'] = $row['email'];
+     }else{
+         header("location:loginfail.php");
+     }
+ }
+ if(isset($_SESSION["id"])) {
+    header("Location:indexlogin.php");
 }
-    $count=mysqli_num_rows($result);
 
-if($count==1)
-{
-    echo"login successful";
-     header("location:indexlogin.php");
-
-}else{
-    echo "incorrect credentials".mysqli_error($conn);
-      header('Refresh: 1;url=loginfail.php');
-}
-}
 ?>
