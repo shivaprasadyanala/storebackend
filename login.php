@@ -1,3 +1,27 @@
+<?php
+ 
+ session_start();
+ $message = "";
+ if(count($_POST)>0){
+     require('connection.php');
+     $sql="select * from register where email= '".$_POST['username']."' and pass='".$_POST['password']."'";
+     $result = mysqli_query($conn,$sql);
+     $row = mysqli_fetch_array($result);
+     if(is_array($row)){
+         $_SESSION['id'] = $row['id'];
+         $_SESSION['name'] = $row['email'];
+     }else{
+         header("location:loginfail.php");
+     }
+ }
+ if(isset($_SESSION["id"])) {
+    header("Location:indexlogin.php");
+}
+
+?>
+
+
+
 <html lang="en">
 
 <head>
@@ -62,7 +86,7 @@
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
 
-                    <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li>
+                    <!-- <li class="nav-item m-3"><a class="nav-link" id="login">login</a></li> -->
 
 
                 </div>
@@ -87,7 +111,7 @@
                     <img src="./imgs/draw2.webp" alt="" width="500" height="350">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-                    <form action="login_action.php" method="POST" id="frmLogin"
+                    <form action="" method="POST" id="frmLogin"
                     onSubmit="validate();">
                         <!-- <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                             <p class="lead fw-normal mb-0 me-3">Sign in with</p>
@@ -147,24 +171,7 @@
         <div class="text-white mb-3 mb-md-0">
             Copyright © 2020. All rights reserved.
         </div>
-        <!-- Copyright -->
-
-        <!-- Right -->
-        <!-- <div>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-facebook-f"></i>
-                </a>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="#!" class="text-white me-4">
-                    <i class="fab fa-google"></i>
-                </a>
-                <a href="#!" class="text-white">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-            </div> -->
-        <!-- Right -->
+     
         </div>
     </section>
 

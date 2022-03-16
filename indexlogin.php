@@ -1,3 +1,18 @@
+<?php
+// $username = $_POST['name'];
+   session_start();
+//    if(isset($_SESSION['username'])) echo'ho';
+//    if($username='') echo "hi";
+
+   if($_SESSION['name']==""){
+    //    echo "hi";
+    
+    header('location:index.php');
+    // exit();
+   }
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -61,7 +76,7 @@
 
                     <!-- <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li> -->
                     <li class="nav-item m-3"><p>welcome user</p></li>
-                   <li class="nav-item m-3"><a class="nav-link" id="login" href="index.php">logout</a></li>
+                   <li class="nav-item m-3"><a class="nav-link" id="login" href="logout.php">logout</a></li>
                 </div>
                 <li class="nav-item">
                     <a class="nav-link" href="cart.php">

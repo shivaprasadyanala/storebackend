@@ -26,8 +26,8 @@ if($count==1)
      header("location:indexlogin.php");
 
 }else{
-    echo "incorrect credentials".mysqli_query($conn);
-    // header("location:loginfail.php");
+    echo "incorrect credentials".mysqli_error($conn);
+      header('Refresh: 1;url=loginfail.php');
 }
 }
 ?>
