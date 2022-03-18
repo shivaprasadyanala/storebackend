@@ -1,8 +1,5 @@
 <?php
-/* Attempt MySQL server connection. Assuming you are running MySQL
-server with default setting (user 'root' with no password) */
-// $link = mysqli_connect("localhost", "root", "", "sevensports");
- 
+
 include 'connection.php';
 // Check connection
 if($conn === false){
@@ -10,9 +7,8 @@ if($conn === false){
 }
 if(isset($_POST['submit']))
 { 
-   echo "hi";
+   // echo "hi";
      $f_name = $_POST['fname'];
-     //echo "name:".$f_name;
      $l_name = $_POST['lname'];
      $email = $_POST['email'];
      $mobile = $_POST['pno'];
@@ -26,6 +22,7 @@ if(isset($_POST['submit']))
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully !";
         header('location:login.php');
+        exit();
      } else {
         echo "Error: " . $sql . ":-" . mysqli_error($conn);
       //   header('location:reg.php');
