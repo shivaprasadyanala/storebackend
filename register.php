@@ -115,7 +115,14 @@
                                     <div class="form-outline mb-4">
                                         <input type="email" id="email" name="email" class="form-control form-control-lg" />
                                         <label class="form-label" for="form3Example97">Email ID</label>
+                                        
                                     </div>
+                                    <?php 
+                                       if(isset($_GET['error'])) 
+                                         if($_GET['error'] == 'email') echo "<p style='color:red'>email already exist</p>";
+                                  
+
+                                        ?>
                                     <!-- </div> -->
                                     <div class="form-outline mb-4">
                                         <input type="password" id="pass" name="pass" class="form-control form-control-lg" />

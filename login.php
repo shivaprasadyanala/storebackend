@@ -2,21 +2,49 @@
  
  session_start();
  $message = "";
+require('connection.php');
+ 
  if(count($_POST)>0){
-     require('connection.php');
-     $sql="select * from register where email= '".$_POST['username']."' and pass='".$_POST['password']."'";
+    $pass = $_POST['password'];
+    if($_POST['username']=='admin@gmail.com'){
+
+
+     $sql="select * from register where email= '".$_POST['username']."'";
      $result = mysqli_query($conn,$sql);
      $row = mysqli_fetch_array($result);
-     if(is_array($row)){
+     $flag = password_verify($pass,$row['pass']);
+     var_dump($row['pass']);
+    //  var_dump($_POST)
+     if(is_array($row) && $flag){
+         echo "ok";
          $_SESSION['id'] = $row['id'];
          $_SESSION['name'] = $row['email'];
+         header('location:./admin/indexadmin.php');
      }else{
-         header("location:loginfail.php");
+         echo "error:".mysqli_error($conn);
+         header('location:loginfail.php');
      }
+         
+    }else{
+
+     $sql="select * from register where email= '".$_POST['username']."'";
+     $result = mysqli_query($conn,$sql);
+     $row = mysqli_fetch_array($result);
+     $flag = password_verify($pass,$row['pass']);
+     var_dump($row['pass']);
+    //  var_dump($_POST)
+     if(is_array($row) && $flag){
+         echo "ok";
+         $_SESSION['id'] = $row['id'];
+         $_SESSION['name'] = $row['email'];
+         header('location:indexlogin.php');
+     }else{
+         echo "error:".mysqli_error($conn);
+         header('location:loginfail.php');
+     }
+    }
+   
  }
- if(isset($_SESSION["id"])) {
-    header("Location:indexlogin.php");
-}
 
 ?>
 

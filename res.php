@@ -14,7 +14,7 @@ $sql = "CREATE TABLE register(
     id int(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(30) NOT NULL,
     last_name VARCHAR(30) NOT NULL,
-    email VARCHAR(70) NOT NULL,
+    email VARCHAR(70) NOT NULL unique,
     pass VARCHAR(70) NOT NULL,
     phn_no INT(10) NOT NULL,
     Addres VARCHAR(100) NOT NULL,

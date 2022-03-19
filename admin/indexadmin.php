@@ -63,7 +63,9 @@
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
 
-                    <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li>
+                    <!-- <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li> -->
+                     <li class="nav-item m-3"><p>admin</p></li>
+                   <li class="nav-item m-3"><a class="nav-link" id="login" href="../index.php" onclick="return confirm('Are you surely want to logout?');">logout</a></li>
 
 
                 </div>
