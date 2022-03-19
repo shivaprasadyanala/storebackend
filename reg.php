@@ -7,7 +7,7 @@ if($conn === false){
 }
 if(isset($_POST['submit']))
 { 
-   // echo "hi";
+   
      $f_name = $_POST['fname'];
      $l_name = $_POST['lname'];
      $email = $_POST['email'];
@@ -19,6 +19,7 @@ if(isset($_POST['submit']))
      $city= $_POST['city'];
      $pin = $_POST['pin'];
      $sql = "INSERT INTO register(first_name,last_name,email,pass,phn_no,Addres,gender,stat,city,pincode) VALUES ('$f_name','$l_name','$email','$pass','$mobile','$address','$gender','$state','$city','$pin')";
+     echo "hi";
      if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully !";
         header('location:./login.php');
