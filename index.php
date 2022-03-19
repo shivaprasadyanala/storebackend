@@ -1,5 +1,4 @@
 <?php
-// $username = $_POST['name'];
    session_start();
 //    {
 //      if($_SESSION['name']==""){  

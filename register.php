@@ -208,6 +208,6 @@
     </section>
   
 </body>
-<script src="regist.js"></script>
+<!-- <script src="regist.js"></script> -->
 
 </html>

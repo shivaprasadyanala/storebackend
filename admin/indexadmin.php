@@ -1,3 +1,22 @@
+<?php
+   session_start();
+//    {
+//      if($_SESSION['name']==""){  
+//        echo "";
+//     // header('Refresh:5,url=<h1>hi</h1>');
+//     // header('location:indexlogin.php');
+//     // exit();
+//    }
+//    }
+if(isset($_SESSION['name']))
+if($_SESSION['name']!=""){
+    header('location:indexadmin.php');
+}
+
+   
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 

@@ -1,59 +1,26 @@
-<!-- <?php
-
-
- $name = $_POST['name'];
- $email = $_POST['email'];
- $subject = $_POST['subject'];
-$message = $_POST['message'];
- mail('shivaprasadyanala@gmail.com',$subject,$message,'From:'.$email);
-?> -->
-
 <?php
-  require_once './mailer/mailer/class.phpmailer.php'; 
-  // creates object
-  $mail = new PHPMailer(true); 
-  
-  if(isset($_POST['send']))
-  {
-    
-   $email      = strip_tags($_POST['email']);
-   
-   $subject    = strip_tags($_POST['subject']);
-   $text_message    = "Hello"; 
-   
-   $message  = strip_tags($_POST['message']);
-   
-   
- try
-   {
-    $mail->IsSMTP(); 
-    $mail->isHTML(true);
-    $mail->SMTPDebug  = 0;                     
-    $mail->SMTPAuth   = true;                  
-    $mail->SMTPSecure = "ssl";                 
-    $mail->Host       = "smtp.gmail.com";      
-    $mail->Port        = '465';             
-    $mail->AddAddress($email);
-    
-    $mail->Username   ="shivaprasadyanala@gmail.com";  
-    $mail->Password   ="Clashofclans";            
-    $mail->SetFrom('shivaprasadyanala@gmail.com','shiva1');
-    $mail->AddReplyTo("shivaprasadysp99@gmail.com","shiva2");
-    $mail->Subject    = $subject;
-    $mail->Body    = $message;
-    $mail->AltBody    = $message;
-     echo "hi";
-    if($mail->Send())
-    {
-     
-     $msg = "Hi, Your mail successfully sent to".$email." ";
-     
-    }
-   }
-   catch(phpmailerException $ex)
-   {
-    $msg = "<div class='alert alert-warning'>".$ex->errorMessage()."</div>";
-   }
-  } 
-  
+
+
+
+if (!empty($_POST)) {
+       $name = $_POST['name'];
+       $email = $_POST['email'];
+       $subject = $_POST['subject'];
+       $message = $_POST['message'];
+       $toEmail = 'shivaprasadyanala@gmail.com';
+       $emailSubject = 'New Customer Request ...!';
+       $headers = ['From' => $email, 'Reply-To' => $email, 'Content-type' => 'text/html; charset=iso-8859-1'];
+
+       $bodyParagraphs = ["Name: {$name}", "Email: {$email}", "Message:, {$message }", "Subject:,{$subject}"];                          
+       $body = join(PHP_EOL, $bodyParagraphs);
+       mail($toEmail, $emailSubject, $body, $headers);
+
+        if (mail($toEmail, $emailSubject, $body, $headers)) {
+          
+           echo" Your Request Has Been Submitted... ";
+        } 
+        else {
+          echo"Oops try again ...! ";
+        }    
+}
 ?>
