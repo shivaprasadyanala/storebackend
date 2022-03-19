@@ -26,10 +26,10 @@
     $test = mysqli_query($conn, "SELECT 1 FROM `register` WHERE `email`='".$email."'");
     if (mysqli_num_rows($test) === 0) {
       $sql = "INSERT INTO `register` (`first_name`, `last_name`, `email`, `pass`, `phn_no`, `addres`, `gender`, `stat`, `city`, `pincode`) VALUES ('".
-             $f_name."','".$l_name."','".$email".','".$stored."','".$mobile."','".$address."','".$gender."','".$state."','".$city."','".$pin."')";
+             $f_name."','".$l_name."','".$email.".','".$stored."','".$mobile."','".$address."','".$gender."','".$state."','".$city."','".$pin."')";
       if (mysqli_query($conn, $sql)) {
         echo "New record has been added successfully !";
-        header('Location: /login.php');
+        header('location: login.php');
         exit;
       }
       echo "Error:<br/>".$sql."<br/>".mysqli_error($conn);
@@ -37,7 +37,7 @@
       exit;
     } else {
       // echo "email already exist";
-      header('Location: /reg.php?error=email');
+      header('location: /register.php?error=email');
       exit;
     }
 
