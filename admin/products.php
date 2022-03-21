@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -65,11 +66,23 @@
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
 
-                    <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li>
+                    <?php 
+                     
+                     if(isset($_SESSION['name'])){
+                        if($_SESSION['name']!=""){
+                         echo " <li class='nav-item m-3'><p>welcome admin</p></li>";
+                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='adminlogout.php'>logout</a></li>";
+                      }
+                     }else{
+                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                     }
+                     
+                    
+                      ?>
 
 
                 </div>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="cart.php">
 
                         <img src="../imgs/shopping-cart-empty-side-view.png" width="32px" style="color: #000;" alt="">
@@ -77,7 +90,7 @@
                         <span class="add-cart-quantity">4</span>
 
                     </a>
-                </li>
+                </li> -->
                 <!-- <p>hi</p> -->
             </div>
         </nav>

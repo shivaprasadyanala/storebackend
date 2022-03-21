@@ -1,4 +1,4 @@
-
+<?php session_start() ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,11 +10,89 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../css/style.css">
 
 </head>
 
 <body>
+      <div>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" id="top-nav">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="indexadmin.php"><img src="../imgs/logo-removebg-preview.png" width="150px" alt=""></a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-xl-auto mb-2 mb-lg-0" id="navbar">
+                        <li class="nav-item ms-3">
+                            <a class="nav-link active" aria-current="page" href="indexadmin.php">HOME</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="contact.php">CONTACT US</a>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="about.php">ABOUT US</a>
+                        </li>
+                        
+                        <li class="nav-item dropdown ms-3">
+                            <a class="nav-link dropdown-toggle" href="viewproductsadmin.php" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">PRODUCTS</a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" href="viewproductsadmin.php">BATS</a></li>
+                                <li><a class="dropdown-item" href="viewproductsadmin.php">BALL</a></li>
+                                <li> <a class="dropdown-item" href="viewproductsadmin.php">HELMENT</a> </li>
+                                <li>
+                                    <hr class="dropdown-divider">
+                                </li>
+                                <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item ms-3">
+                            <a class="nav-link" href="products.php">ADD PRODUCTS</a>
+                        </li>
+
+                    </ul>
+
+                    <form class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
+                    </form>
+
+                    <!-- <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li> -->
+                     <?php 
+                     
+                     if(isset($_SESSION['name'])){
+                        if($_SESSION['name']!=""){
+                         echo " <li class='nav-item m-3'><p>welcome admin</p></li>";
+                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='adminlogout.php'>logout</a></li>";
+                      }
+                     }else{
+                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                     }
+                     
+                    
+                      ?>
+
+
+                </div>
+                <!-- <li class="nav-item">
+                    <a class="nav-link" href="cart.php">
+
+                        <img src="../imgs/shopping-cart-empty-side-view.png" width="32px" style="color: #000;" alt="">
+
+                        <span class="add-cart-quantity">4</span>
+
+                    </a>
+                    </li> -->
+            </div>
+        </nav>
+    </div>
    <?php
  $pid = $_GET['pid'];
 include 'connection.php';

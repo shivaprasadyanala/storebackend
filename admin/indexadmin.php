@@ -1,18 +1,5 @@
 <?php
    session_start();
-//    {
-//      if($_SESSION['name']==""){  
-//        echo "";
-//     // header('Refresh:5,url=<h1>hi</h1>');
-//     // header('location:indexlogin.php');
-//     // exit();
-//    }
-//    }
-if(isset($_SESSION['name']))
-if($_SESSION['name']!=""){
-    header('location:indexadmin.php');
-}
-
    
 ?>
 
@@ -83,12 +70,23 @@ if($_SESSION['name']!=""){
                     </form>
 
                     <!-- <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li> -->
-                     <li class="nav-item m-3"><p>admin</p></li>
-                   <li class="nav-item m-3"><a class="nav-link" id="login" href="../index.php" onclick="return confirm('Are you surely want to logout?');">logout</a></li>
+                     <?php 
+                     
+                     if(isset($_SESSION['name'])){
+                        if($_SESSION['name']!=""){
+                         echo " <li class='nav-item m-3'><p>welcome admin</p></li>";
+                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='adminlogout.php'>logout</a></li>";
+                      }
+                     }else{
+                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                     }
+                     
+                    
+                      ?>
 
 
                 </div>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="cart.php">
 
                         <img src="../imgs/shopping-cart-empty-side-view.png" width="32px" style="color: #000;" alt="">
@@ -96,8 +94,7 @@ if($_SESSION['name']!=""){
                         <span class="add-cart-quantity">4</span>
 
                     </a>
-                </li>
-                <!-- <p>hi</p> -->
+                    </li> -->
             </div>
         </nav>
     </div>

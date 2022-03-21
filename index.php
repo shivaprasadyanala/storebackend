@@ -8,10 +8,10 @@
 //     // exit();
 //    }
 //    }
-if(isset($_SESSION['name']))
-if($_SESSION['name']!=""){
-    header('location:indexlogin.php');
-}
+// if(isset($_SESSION['name']))
+// if($_SESSION['name']!=""){
+//     header('location:indexlogin.php');
+// }
 
    
 ?>
@@ -77,7 +77,19 @@ if($_SESSION['name']!=""){
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
 
-                    <li class="nav-item m-3"><a class="nav-link" id="login" href="login.php">login</a></li>
+                   <?php 
+                     
+                     if(isset($_SESSION['name'])){
+                        if($_SESSION['name']!=""){
+                         echo " <li class='nav-item m-3'><p>welcome admin</p></li>";
+                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='logout.php'>logout</a></li>";
+                      }
+                     }else{
+                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                     }
+                     
+                    
+                      ?>
 
 
                 </div>
