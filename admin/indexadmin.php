@@ -36,7 +36,7 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-xl-auto mb-2 mb-lg-0" id="navbar">
-                        <li class="nav-item ms-3">
+                        <li class="nav-item ms-2">
                             <a class="nav-link active" aria-current="page" href="indexadmin.php">HOME</a>
                         </li>
                         <li class="nav-item ms-3">
@@ -74,11 +74,11 @@
                      
                      if(isset($_SESSION['name'])){
                         if($_SESSION['name']!=""){
-                         echo " <li class='nav-item m-3'><p>welcome admin</p></li>";
-                          echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='adminlogout.php'>logout</a></li>";
+                         echo " <li class='nav-item m-1'><p>welcome admin</p></li>";
+                          echo "<li class='nav-item m-1'><a class='nav-link' id='login' href='adminlogout.php'>logout</a></li>";
                       }
                      }else{
-                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                            echo "<li class='nav-item m-1'><a class='nav-link' id='login' href='login.php'>login</a></li>";
                      }
                      
                     
