@@ -1,12 +1,6 @@
 <?php
-// $username = $_POST['name'];
-   session_start();
+ session_start();
 
-   if($_SESSION['name']==""){
-    
-    header('location:index.php');
-    // exit();
-   }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +28,7 @@
 
 </head>
 
-<>
+
     <!-- navbar -->
      <div>
         <nav class="navbar navbar-expand-lg navbar-light bg-light" id="top-nav">
@@ -75,16 +69,15 @@
                         <button class="btn btn-primary btn-outline-success" type="submit">Search</button>
                     </form>
                     <?php 
-                    // session_start();
-                      if($_SESSION['name']==""){
-                         
-                         echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>"; 
-                      }
-                    
-                      else{
-                           echo "welcome user:".$_SESSION['name'];
+                     
+                     if(isset($_SESSION['name'])){
+                        if($_SESSION['name']!=""){
+                         echo " <li class='nav-item m-3'><p>welcome user</p></li>";
                           echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='logout.php'>logout</a></li>";
-                      }  
+                      }
+                     }else{
+                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                     }
                      
                     
                       ?>

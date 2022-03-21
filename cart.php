@@ -2,12 +2,12 @@
 // $username = $_POST['name'];
    session_start();
 
-   if($_SESSION['name']==""){
-    //    echo "hi";
+//    if($_SESSION['name']==""){
+//     //    echo "hi";
     
-    header('location:index.php');
-    // exit();
-   }
+//     header('location:index.php');
+//     // exit();
+//    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -75,17 +75,15 @@
                     </form>
 
                    <?php 
-                    // session_start();
-                      if($_SESSION['name']==""){
-                         
-                         echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>"; 
-                      }
-                    
-                      else{
-                           echo "welcome user";
+                //    session_start();
+                     if(isset($_SESSION['name'])){
+                        if($_SESSION['name']!=""){
+                         echo  " <li class='nav-item m-3'><p>welcome user</p></li>";
                           echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='logout.php'>logout</a></li>";
-                      }  
-                     
+                      }
+                     }else{
+                            echo "<li class='nav-item m-3'><a class='nav-link' id='login' href='login.php'>login</a></li>";
+                     }
                     
                       ?>
 
