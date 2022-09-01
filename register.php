@@ -97,13 +97,13 @@
                                     <div class="row">
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
-                                                <input type="text" id="fname" name="fname" class="form-control form-control-lg" />
+                                                <input type="text" id="fname" name="fname" class="form-control form-control-lg" required minlength="4" maxlength="25"/>
                                                 <label class="form-label" for="form3Example1m">First name</label>
                                             </div>
                                         </div>
                                         <div class="col-md-6 mb-4">
                                             <div class="form-outline">
-                                                <input type="text" id="laname" name="lname" class="form-control form-control-lg" />
+                                                <input type="text" id="laname" name="lname" class="form-control form-control-lg" required minlength="4" maxlength="25"/>
                                                 <label class="form-label" for="form3Example1n">Last name</label>
                                             </div>
                                         </div>
@@ -113,9 +113,8 @@
 
                                     <!-- <div class="col-md-6 mb-4"> -->
                                     <div class="form-outline mb-4">
-                                        <input type="email" id="email" name="email" class="form-control form-control-lg" />
+                                        <input type="email" id="email" name="email" class="form-control form-control-lg" required minlength="15" maxlength="30" />
                                         <label class="form-label" for="form3Example97">Email ID</label>
-                                        
                                     </div>
                                     <?php 
                                        if(isset($_GET['error'])) 
@@ -125,16 +124,16 @@
                                         ?>
                                     <!-- </div> -->
                                     <div class="form-outline mb-4">
-                                        <input type="password" id="pass" name="pass" class="form-control form-control-lg" />
+                                        <input type="password" id="pass" name="pass" class="form-control form-control-lg" required minlength="8" maxlength="30"/>
                                         <label class="form-label" for="form3Example8">Password</label>
                                     </div>
                                     
                                     <div class="form-outline mb-4">
-                                        <input type="number" id="phno" name="pno" title="Phone number must contain 10 digits, Invalid Phone number" pattern="[1-9]{1}[0-9]{9}" required class="form-control form-control-lg" />
+                                        <input type="number" id="phno" name="pno" title="Phone number must contain 10 digits, Invalid Phone number" pattern="[1-9]{1}[0-9]{9}" required class="form-control form-control-lg" required minlength="10" maxlength="10"/>
                                         <label class="form-label" for="form3Example8">Phone Number</label>
                                     </div>
                                     <div class="form-outline mb-4">
-                                        <input type="text" id="address"  name="address" class="form-control form-control-lg" />
+                                        <input type="text" id="address"  name="address" class="form-control form-control-lg" required minlength="15" maxlength="100"/>
                                         <label class="form-label" for="form3Example8">Address</label>
                                     </div>
 
@@ -144,17 +143,17 @@
                                         <h6 class="mb-0 me-4">Gender: </h6>
 
                                         <div class="form-check form-check-inline mb-0 me-4">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="female" />
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="femaleGender" value="female" required/>
                                             <label class="form-check-label" for="femaleGender">Female</label>
                                         </div>
 
                                         <div class="form-check form-check-inline mb-0 me-4">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="male" />
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="maleGender" value="male" required/>
                                             <label class="form-check-label" for="maleGender">Male</label>
                                         </div>
 
                                         <div class="form-check form-check-inline mb-0">
-                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="other" />
+                                            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="otherGender" value="other" required/>
                                             <label class="form-check-label" for="otherGender">Other</label>
                                         </div>
 
@@ -185,7 +184,7 @@
 
 
                                     <div class="form-outline mb-4">
-                                        <input type="number" id="pin" name="pin" min="100000" max="1000000" class="form-control form-control-lg" />
+                                        <input type="number" id="pin" name="pin" min="100000" max="1000000" class="form-control form-control-lg" required/>
                                         <label class="form-label" for="form3Example90">Pincode</label>
                                     </div>
 
@@ -195,8 +194,6 @@
                                         <!-- <button type="submit" class="btn btn-warning btn-lg ms-2">Submit form</button> -->
                                         <input type="submit" name="submit" class="btn btn-primary" value="Submit Form">
                                     </div>
-                                
-
                                 </div>
                             </div>
                         </div>

@@ -13,7 +13,7 @@ $port = "8016";
 
 // Create connection
 
-$conn = mysqli_connect($servername, $username, $password,$db);
+$conn = mysqli_connect($servername, $username, $password,$db,$port);
 
 // Check connection
 if ($conn->connect_error) {
