@@ -7,13 +7,13 @@
 
 $servername = "containers-us-west-11.railway.app";
 $username = "root";
-$password = "dWHYsWhWzxrfQ8ATfFbY";
+$password = "b3xCYV0o6hvbQIbzJ5Hp";
 $db = "railway";
 $port = "8016";
 
 // Create connection
 
-$conn = mysqli_connect($servername, $username, $password,$db,$port);
+$conn = mysqli_connect($servername, $username, $password,$db);
 
 // Check connection
 if ($conn->connect_error) {
